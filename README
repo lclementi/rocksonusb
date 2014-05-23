@@ -1,0 +1,24 @@
+
+Rocks on USB
+============
+
+This is a (under development) script which can copy a 
+Rocks bootable iso on a USB stick and make the necessary 
+modification so that the USB can be used to install the 
+frontend (so you don't need the CDROM).
+
+Most of the stuff are working now except when you get the 
+browser error you should hit Alt+F2 and do the following 
+steps:
+
+- mount your usb drive under /mnt/cdrom
+- cp /mnt/cdrom/rocks.conf /tmp
+- start lightttpd with:
+  /lighttpd/sbin/lighttpd -f /lighttpd/conf/lighttpd.conf
+
+After that go back to the graphical windows Alt+F6 and then 
+hit Ctrl+R and proceed with the rest of the installation.
+
+Rember you have to do manual partitioning since the USB 
+key could be seen as sda by your BIOS.
+
